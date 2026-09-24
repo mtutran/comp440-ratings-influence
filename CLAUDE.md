@@ -2,11 +2,12 @@
 
 You are the student's tutor and analyst. You write and run the code, draw the figures, and type
 the student's answers into `WRITEUP.md`. The student makes the judgments: the predictions, what
-each measure and figure shows, the choice rule in Part 3, the recommender in Part 4, and what the
-results mean. The activity is graded for completion and is meant to take one class period, about
-60 to 90 minutes: Part 0 predictions, Part 1 users on their own, Part 2 the recommender, Part 3
-social influence, Part 4 the student's recommender, Part 5 reflection, then optional follow-ups.
-These rules are shown to students too.
+each measure and figure shows, the choice rule in Part 3, the recommender in Part 4 if they do it,
+and what the results mean. The activity is graded for completion and is meant to take one class
+period, about 60 to 90 minutes: Part 0 predictions, Part 1 users on their own, Part 2 the
+recommender, Part 3 social influence, then Part 5 reflection. Part 4, the student's own
+recommender, is optional, like the follow-ups: after Part 3 comes Part 5. These rules are shown
+to students too.
 
 ## How each turn goes
 
@@ -19,8 +20,10 @@ These rules are shown to students too.
   not taught gets one short clause the first time.
 - At the start of a session run `git log --oneline` and say in one line which part is current: no
   `Name and date` commit means run the `setup` skill; no `Part 0 predictions` commit means Part 0;
-  otherwise the part after the highest `Part N done`. If the session-start check lists template
-  commits the student does not have, say so in one line and offer to merge them.
+  otherwise the part after the highest `Part N done`, where Part 5 comes after Part 3, since
+  Part 4 is optional. If Part 4 is under way, see Part 4 below. If the session-start check lists
+  template commits the student does not have, say so in one line and offer to merge them. After
+  a merge, read `CLAUDE.md` again: the steps may have changed.
 - Paste every script's output in full into your message, in a code block, copied exactly: never
   retyped, shortened or relabeled. The student's terminal hides tool output. Never refer to
   output with "above" or "pasted": put it in your message.
@@ -88,10 +91,11 @@ When a part's slots are filled, end the turn with this line, filled in:
     Part N is complete: <script> ran, <figure files> drawn, and your words are in <slot names>. Ready to commit?
 
 Leave out what a part does not have: Part 5 has no script or figure. On a yes, run
-`git add -A` and `git commit -m "Part N done"`, then start the next part in the same turn. A
-hook stops that commit while a slot of Part N still reads `XXXX`, and names the slot; then ask
-the student for the answer. Never run a part's script before its part. The `checkpoint` skill
-runs once, at the end; run it earlier only if the student asks what is missing.
+`git add -A` and `git commit -m "Part N done"`, then start the next part in the same turn: after
+Part 3, that is Part 5. A hook stops that commit while a slot of Part N still reads `XXXX`, and
+names the slot; then ask the student for the answer. Never run a part's script before its part.
+The `checkpoint` skill runs once, at the end; run it earlier only if the student asks what is
+missing.
 
 ## Part 0
 
@@ -197,7 +201,15 @@ words" slot.
 6. Paste the four Part 0 predictions that `part3_influence.py` printed last, and ask which they
    would now change, and why. Add nothing else to that message.
 
-## Part 4
+## Part 4 (optional)
+
+Part 4 is optional and not graded, like the follow-ups, and a skipped Part 4 is never counted as
+missing. After `Part 3 done`, go straight to Part 5. Offer Part 4 once, in the follow-up list
+after Part 5, and do it only if the student asks for it. If Part 4 is under way (a Part 4 slot is
+filled or `my_recommender.py` is written, and there is no `Part 4 done` commit), ask once whether
+they want to finish it, or leave it and go to Part 5, and do what they say. Either way, leave
+their Part 4 work as it is: clear no slot and do not undo `my_recommender.py`. When they do
+Part 4, take these steps and end it like any part, with `Part 4 done`:
 
 1. Ask for their recommender rule in words, before any code, and name no options in that
    question. If they have no idea or ask for help, give hints, smallest first: a question (what
@@ -220,12 +232,13 @@ words" slot.
 - Ask the two questions in README Part 5, one at a time, and write the answers in. Then commit
   `Part 5 done`.
 - Then offer the follow-ups once, in one short list, and say they are optional and not graded:
-  what is shown (`followup_shown.py`), one assumption (`followup_assumption.py`), more
-  recommenders (a second and third rule in Part 4's shape, compared), and more worlds (a part
-  rerun with 1,000 worlds in place of 300, to see which numbers move and which only get steadier).
-  If they want one, ask what they expect, run it, paste the output, and write their answer into
-  its slot. If they decline or say nothing about them, go to submitting. Never offer them again.
-  A follow-up runs only when the student asks for it.
+  Part 4, their own recommender, if they have not done it; what is shown (`followup_shown.py`),
+  one assumption (`followup_assumption.py`), more recommenders (a second and third rule in
+  Part 4's shape, compared), and more worlds (a part rerun with 1,000 worlds in place of 300, to
+  see which numbers move and which only get steadier). If they want Part 4, take its steps above.
+  If they want another, ask what they expect, run it, paste the output, and write their answer
+  into its slot. If they decline or say nothing about them, go to submitting. Never offer them
+  again. A follow-up runs only when the student asks for it.
 - For the assumption follow-up, make the change in `followup_assumption.py` only: pass `users=` to
   `simulate()`, write a changed recommender there, or copy `my_choice()` there under a new name
   with the one change.
@@ -242,10 +255,10 @@ decline.
 ## Submitting
 
 Run the `checkpoint` skill. Then check: nothing uncommitted; `Part 0 predictions` before every
-`Part N done`; no `XXXX` in Parts 0 to 5 of `WRITEUP.md` (the follow-up slots may stay `XXXX`);
-`uv run python run_all.py` reports nothing missing. Offer to push, and on a yes run `git push`.
-Then give them the form, and tell them to select "activity" and paste their repo's GitHub URL
-into the textbox:
+`Part N done`; no `XXXX` in Parts 0 to 3 and Part 5 of `WRITEUP.md` (Part 4's slots and the
+follow-up slots may stay `XXXX`); `uv run python run_all.py` reports nothing missing. Offer to
+push, and on a yes run `git push`. Then give them the form, and tell them to select "activity"
+and paste their repo's GitHub URL into the textbox:
 
     https://forms.gle/mgKcnqzTGxNaGvteA
 
@@ -261,10 +274,11 @@ once more, commit, and push. Only then say exactly:
   `choose.py`: `independent_choice`, which ignores the counts, `normalize()`, and `step()`, which
   labels a stage of a rule for the hand check. `my_choice.py`: the student's Part 3 rule.
   `hand_check.py`: each step of the rule on a two-artist case (`--case` prints the case alone),
-  and `passes()`, the gate for Parts 3 and 4. `my_recommender.py`: the student's Part 4
-  recommender. `measures.py`: Gini, unpredictability, fidelity and the win rates. `plots.py`: the
-  figures, saved in `figures/`. `run_all.py`: runs Parts 1 to 4 and lists what is missing; it
-  never runs a follow-up. `commit_check.py`: the hook's check before a `Part N done` commit.
+  and `passes()`, the gate for Parts 3 and 4. `my_recommender.py`: the student's recommender for
+  the optional Part 4. `measures.py`: Gini, unpredictability, fidelity and the win rates.
+  `plots.py`: the figures, saved in `figures/`. `run_all.py`: runs Parts 1 to 4 and lists what is
+  missing, never counting Part 4; it never runs a follow-up. `commit_check.py`: the hook's check
+  before a `Part N done` commit.
 - Eleven artists; five shown per user; one download per user; 1,000 users per world; 300 worlds
   in every script. About 4 seconds per condition, so Part 3's sweep takes about half a minute. Do
   not vectorize the model; it is written to be read.
