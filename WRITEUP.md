@@ -31,11 +31,11 @@ Code: `part1_independent.py`. Figure: `figures/part1_strip.png`.
 
 Code: `recommender.py`, `part2_recommender.py`. Figure: `figures/part2_strip.png`.
 
-**The capabilities and limitations of `top_five`, in your words:** XXXX
+**The capabilities and limitations of `top_five`, in your words:** It shows five most downloaded artists, so it needs at least five artists with at least a download, otherwise it will return random artists to fill the list.
 
-**What Claude corrected in your reading, in your words, or "nothing":** XXXX
+**What Claude corrected in your reading, in your words, or "nothing":** nothing
 
-**What changed against Part 1, one sentence:** XXXX
+**What changed against Part 1, one sentence:** mean Gini and unpredictability are higher, share of each world's downloads is further from the true popularity.
 
 ## Part 3. Social influence
 
