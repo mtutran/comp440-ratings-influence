@@ -42,19 +42,19 @@ Code: `recommender.py`, `part2_recommender.py`. Figure: `figures/part2_strip.png
 Code: `my_choice.py`, `hand_check.py`, `part3_influence.py`. Figures: `figures/part3_gini.png`,
 `figures/part3_unpredictability.png`.
 
-**Your rule in your words:** XXXX
+**Your rule in your words:** The probability is a weighted function of the social share and taste share, with no effects from position.
 
-**Hand check, before the table: which artist your rule should favor, and by a little or a lot:** XXXX
+**Hand check, before the table: which artist your rule should favor, and by a little or a lot:** Bruno Mars, a lot
 
-**Hand check: whether the table matched what you said:** XXXX
+**Hand check: whether the table matched what you said:** yes
 
-**The shape you expect the two curves to have, as you told Claude before the run:** XXXX
+**The shape you expect the two curves to have, as you told Claude before the run:** I mistook the last part, I expect Gini to fall while unpredictability rises
 
-**What you changed in your rule, at the hand check or after the run, or "nothing":** XXXX
+**What you changed in your rule, at the hand check or after the run, or "nothing":** nothing
 
-**What the two curves show against the paper's Figures 1 and 2, in one or two sentences:** XXXX
+**What the two curves show against the paper's Figures 1 and 2, in one or two sentences:** unpredictability matches, but my Gini stays roughly flat at the beginning.
 
-**Revisited: which of your Part 0 predictions you would now change, and why:** XXXX
+**Revisited: which of your Part 0 predictions you would now change, and why:** no
 
 ## Part 4. Your recommender
 
