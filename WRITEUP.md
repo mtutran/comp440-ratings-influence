@@ -23,9 +23,9 @@ Answered before anything runs. Claude writes them in as you said them, and they 
 
 Code: `part1_independent.py`. Figure: `figures/part1_strip.png`.
 
-**What Gini and unpredictability each show, in your own words:** XXXX
+**What Gini and unpredictability each show, in your own words:** Gini of 0.277 shows that within a world, the difference in share of downloads slightly differ among artists. Unpredictability of 0.010 shows that every world ends very similarly.
 
-**What the figure shows, one sentence:** XXXX
+**What the figure shows, one sentence:** The figure shows that the share of downloads in every world is close to the true popularity of the artist, even though popular artists seem to have slightly lower share than their true popularity and unknown artists seem to have slightly higher share than their true popularity.
 
 ## Part 2. The recommender
 
