@@ -3,8 +3,8 @@
 **Fall 2026 · Individual · Counts as one reading reflection or activity · graded for completion**
 **Due Tue Oct 6, 8:00am Central**
 
-This is graded for completion of parts 0-5. The follow-ups at the end are optional and are not
-graded. Questions go to `#comp440-f26`.
+This is graded for completion of parts 0-3 and part 5. Part 4 and the follow-ups at the end are
+optional and are not graded. Questions go to `#comp440-f26`.
 
 **When you are finished, complete the [Work Submission Form](https://forms.gle/mgKcnqzTGxNaGvteA), select "activity" and share the URL to your GitHub repo in the textbox.**
 
@@ -66,7 +66,7 @@ Claude records the transcript of your sessions to share with Shilad.
 
 ## The task
 
-Six parts, about 85 minutes together. Part 3 is the long one. The minutes are a guide (and Claude's prediction).
+Parts 0 to 3 and Part 5, about 70 minutes together; Part 4 is optional. Part 3 is the long one. The minutes are a guide (and Claude's prediction).
 
 ### Part 0. Predictions · about 5 minutes
 
@@ -125,7 +125,11 @@ There is no single right rule. Some things to consider as you design your rule:
 6. Claude shows your four Part 0 predictions as you wrote them and asks which you would now
    change, and why.
 
-### Part 4. Your recommender · about 15 minutes
+### Part 4. Your recommender (optional) · about 15 minutes
+
+Optional, and not graded, like the follow-ups. You can skip it and go straight from Part 3 to
+Part 5; a skipped Part 4 is never counted as missing. If you have already started it, you may
+finish it or stop and go to Part 5. If you want to do it, ask Claude for it.
 
 A recommender sees only the download counts, never true popularity. It decides which five artists
 to show, in what order, and what counts to show with them. Claude asks for a rule of your own, in
@@ -145,9 +149,10 @@ reading? Second, a moment Claude was wrong or overconfident, or a judgment you k
 
 ## Follow-ups
 
-Optional, and not graded. Claude offers them once, after Part 5. Ask for one if you want it; do
-none and you have still finished the activity. Their slots are at the end of `WRITEUP.md`, and
-`run_all.py` neither runs them nor counts them as missing.
+Optional, and not graded, like Part 4. Claude offers them once, after Part 5, with Part 4 if you
+have not done it. Ask for one if you want it; do none and you have still finished the activity.
+Their slots are at the end of `WRITEUP.md`, and `run_all.py` neither runs them nor counts them as
+missing.
 
 * **What is shown.** `followup_shown.py`: two markets at the same social influence, both showing
   the five most downloaded artists, one in a random order and one sorted by count — the paper's
@@ -167,9 +172,9 @@ none and you have still finished the activity. Their slots are at the end of `WR
 
 ## Submitting
 
-When the six parts are done, Claude runs `/checkpoint`, which lists anything still missing. Then
-ask Claude to commit and push, and fill in the form: https://forms.gle/mgKcnqzTGxNaGvteA. Tell
-Claude when you have. It will say **YOU ARE FINISHED!**
+When Parts 0 to 3 and Part 5 are done, Claude runs `/checkpoint`, which lists anything still
+missing. Then ask Claude to commit and push, and fill in the form:
+https://forms.gle/mgKcnqzTGxNaGvteA. Tell Claude when you have. It will say **YOU ARE FINISHED!**
 
 ## AI guidelines
 
@@ -188,8 +193,8 @@ Part 3 rule.
 
 Graded for completion. A part is complete when its script has run and its slots in `WRITEUP.md`
 hold your own words. I do not grade whether a prediction came true or whether a reading is the
-one I would have written. `uv run python run_all.py` lists what is still missing; when it says
-nothing is missing, the activity is complete.
+one I would have written. `uv run python run_all.py` lists what is still missing, and never counts
+Part 4 or the follow-ups; when it says nothing is missing, the activity is complete.
 
 | Part | Complete when |
 |---|---|
@@ -197,8 +202,8 @@ nothing is missing, the activity is complete.
 | 1. Users on their own | `part1_independent.py` has run; what the two measures show and what the figure shows, in your words |
 | 2. The recommender | `part2_recommender.py` has run; `top_five` in your words, what Claude corrected, what changed |
 | 3. Social influence | Your rule in your words and in `my_choice.py`, your two hand-check answers, the shape you expected, what you changed, `part3_influence.py` has run, what the curves show, and the revisited predictions |
-| 4. Your recommender | Your rule described before any code, what you expected, `part4_recommender.py` has run, the tradeoff sentence |
 | 5. Reflection | Both sentences |
+| 4. Your recommender | Optional. Not graded, and never counted as missing |
 | Follow-ups | Optional. Not graded, and never counted as missing |
 
 ## Talk to me if...
