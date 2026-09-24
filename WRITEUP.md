@@ -68,9 +68,9 @@ Code: `my_recommender.py`, `part4_recommender.py`. Figure: `figures/part4_recomm
 
 ## Part 5. Reflection
 
-**Where this shows up in data you have already handled, or in an interface you use, one sentence:** XXXX
+**Where this shows up in data you have already handled, or in an interface you use, one sentence:** This shows up in  Steck, Baltrunas, Elahi, Liang, Raimond & Basilico, "Deep Learning for Recommender Systems: A Netflix Case Study" (AI Magazine, 2021) reading (the concept of feedback loop).
 
-**A moment Claude was wrong or overconfident, or a judgment you kept for yourself, one sentence:** XXXX
+**A moment Claude was wrong or overconfident, or a judgment you kept for yourself, one sentence:** I find your questions hard to understand sometimes.
 
 ## Follow-ups
 
